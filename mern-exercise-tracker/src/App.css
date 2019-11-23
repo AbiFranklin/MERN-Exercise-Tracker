@@ -1,22 +1,22 @@
-.App {
-  text-align: center;
+
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .mr-auto {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+@media only screen and (max-width: 400px) {
+  .mr-auto {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+  }
 }
