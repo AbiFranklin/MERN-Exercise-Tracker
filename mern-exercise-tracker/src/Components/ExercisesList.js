@@ -1,6 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import bike from '../img/bicycle.png';
+import exercise from '../img/exercise.png';
+import weight from '../img/gym.png';
+import swim from '../img/swimmer.png'
+import yoga from '../img/yoga.png'
+
 
 function ExercisesList() {
   const exercises = [
@@ -10,7 +16,7 @@ function ExercisesList() {
         "description": "Biking",
         "duration": 30,
         "date": "2019-11-23T03:18:00.752Z",
-        "pic": "bike",
+        "pic": "../img/bicycle.png",
         "createdAt": "2019-11-23T20:26:14.318Z",
         "updatedAt": "2019-11-23T20:26:14.318Z",
         "__v": 0
@@ -21,7 +27,7 @@ function ExercisesList() {
         "description": "Aerobics",
         "duration": 30,
         "date": "2019-11-23T03:18:00.752Z",
-        "pic": "exercise",
+        "pic": "../img/bicycle.png",
         "createdAt": "2019-11-23T20:27:29.936Z",
         "updatedAt": "2019-11-23T20:27:29.936Z",
         "__v": 0
@@ -32,7 +38,7 @@ function ExercisesList() {
         "description": "Weights",
         "duration": 15,
         "date": "2019-11-23T03:18:00.752Z",
-        "pic": "weight",
+        "pic": "../img/bicycle.png",
         "createdAt": "2019-11-23T20:27:54.082Z",
         "updatedAt": "2019-11-23T20:27:54.082Z",
         "__v": 0
@@ -43,7 +49,7 @@ function ExercisesList() {
         "description": "Running",
         "duration": 20,
         "date": "2019-11-23T03:18:00.752Z",
-        "pic": "run",
+        "pic": "../img/bicycle.png",
         "createdAt": "2019-11-23T20:28:16.633Z",
         "updatedAt": "2019-11-23T20:28:16.633Z",
         "__v": 0
@@ -54,7 +60,7 @@ function ExercisesList() {
         "description": "Swimming",
         "duration": 40,
         "date": "2019-11-23T03:18:00.752Z",
-        "pic": "swim",
+        "pic": "../img/bicycle.png",
         "createdAt": "2019-11-23T20:28:38.648Z",
         "updatedAt": "2019-11-23T20:28:38.648Z",
         "__v": 0
@@ -65,7 +71,7 @@ function ExercisesList() {
         "description": "Yoga",
         "duration": 30,
         "date": "2019-11-23T03:18:00.752Z",
-        "pic": "yoga",
+        "pic": "../img/bicycle.png",
         "createdAt": "2019-11-23T20:28:54.163Z",
         "updatedAt": "2019-11-23T20:28:54.163Z",
         "__v": 0
@@ -77,7 +83,25 @@ function ExercisesList() {
     <div>
       <h1>Exercise List</h1>
       <hr/>
-      {exercises.map(exercise => { return <h2>{exercise.description}</h2> })}
+      <Container fluid={true}>
+        <Row>
+            {exercises.map(exercise => { return (
+              <Col xs={12} sm={8} md={7} lg={6} xl={4}>
+              <Card className='card' >
+              <Card.Img variant="top" src='https://picsum.photos/200' />
+              <Card.Body>
+                <Card.Title>{exercise.description}</Card.Title>
+                <Card.Text>
+                  <p>User: {exercise.username}</p>
+                  <p>Duration: {exercise.duration}</p>
+                </Card.Text>
+                <Button variant="primary">Edit</Button>
+              </Card.Body>
+            </Card>
+            </Col>
+            ) })}
+        </Row>
+      </Container>
     </div>
   );
 }
