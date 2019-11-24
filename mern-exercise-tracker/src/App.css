@@ -1,8 +1,32 @@
-
+h1 {
+  margin: 10px;
+}
 
 .card {
-  width: 80%;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row !important;
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+
+.card img {
+  max-width: 200px;
+  width: 98%;
+  margin: 1% auto;
+}
+
+.card p {
+  display: inline-block;
+  margin: auto 10px;
+}
+
+.cardbody {
+  text-align: center;
+}
+
+.editbutton {
+  float: right;
+  margin-top: 5px;
 }
 
 @media only screen and (max-width: 600px) {
